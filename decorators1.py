@@ -1,4 +1,4 @@
-def simple_hello():
+'''def simple_hello():
     print("Hello from simple function!")
 
 
@@ -7,4 +7,16 @@ def simple_decorator(function):
     return function
 
 decorated = simple_decorator(simple_hello)
-decorated()
+decorated()'''
+
+def simple_decorator(function):
+    print('We are about to call "{}"'.format(function.__name__))
+    return function
+
+
+@simple_decorator
+def simple_hello():
+    print("Hello from simple function!")
+
+
+simple_hello()
